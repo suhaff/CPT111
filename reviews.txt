@@ -1,0 +1,8 @@
+
+bac001    reen123    3    okayish book
+bac001    lim1212    4    it is a textbook. What do you expect?
+bsf002    kessler12  5    eye-opening book. Must read!
+bcs003    mom999     5    nice illustration. Easy to read out
+bsf004    george88   2    the wordings may be a bit hard for kid
+
+

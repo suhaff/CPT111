@@ -1,0 +1,55 @@
+Algorithm: Book Review System
+
+1. BEGIN
+
+2. INITIALIZE Data Structures:
+   a. Declare a map `books` to store book information (key: `bookID`, value: `Book` struct).
+   b. Declare a vector `reviews` to store review data (`Review` structs).
+
+3. LOAD BOOK DATA:
+   a. Open the file `books.txt`.
+   b. WHILE there are lines to read in the file:
+      i. Extract `bookID` and `title` from the current line.
+      ii. Add (`bookID`, `Book(bookID, title)`) to the `books` map.
+   c. CLOSE the file.
+
+4. LOAD REVIEW DATA:
+   a. Open the file `reviews.txt`.
+   b. WHILE there are lines to read in the file:
+      i. Extract `bookID`, `username`, `rating`, and `comment` from the current line.
+      ii. Add `Review(bookID, username, rating, comment)` to the `reviews` vector.
+   c. CLOSE the file.
+
+5. DISPLAY MENU OPTIONS:
+   a. DO:
+      i. PRINT:
+         - "1. Display reviews by book ID"
+         - "2. Add a new review"
+         - "3. Exit"
+      ii. PROMPT user for a choice.
+
+6. HANDLE USER INPUT:
+   a. IF the user selects "1. Display reviews by book ID":
+      i. PROMPT for a `bookID`.
+      ii. SEARCH the `reviews` vector for reviews matching `bookID`.
+         - IF reviews are found:
+            - PRINT the `username`, `rating`, and `comment` for each matching review.
+         - ELSE:
+            - PRINT "No reviews found for this book."
+   b. IF the user selects "2. Add a new review":
+      i. PROMPT for `bookID`, `username`, `rating` (1-5), and `comment`.
+      ii. VALIDATE the `bookID`:
+         - IF `bookID` exists in `books` map:
+            - CREATE a new `Review` object with the given data.
+            - ADD the new review to the `reviews` vector.
+            - OPEN `reviews.txt` in append mode.
+            - WRITE the new review to the file in the format: `bookID username rating comment`.
+            - PRINT "Review added successfully."
+         - ELSE:
+            - PRINT "Invalid book ID."
+   c. IF the user selects "3. Exit":
+      i. PRINT "Exiting program. Changes saved."
+      ii. EXIT the loop.
+
+7. END.
+
